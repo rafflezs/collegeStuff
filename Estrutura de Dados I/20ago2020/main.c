@@ -15,8 +15,18 @@ int main(int argc, char const *argv[])
         printf("Operacao valida.\n");
     }
     
-    
-    
+    empilhar(pilha1, 10);
+    //mostrar_pilha(pilha1);
+    empilhar(pilha1, 20);
+    //mostrar_pilha(pilha1);
+    empilhar(pilha1, 30);
+    //mostrar_pilha(pilha1);
+
+    printf("%i\n" ,topo(pilha1));
+
+    remover_todos(pilha1);
+
+    printf("%i\n" ,topo(pilha1));
 
     return 0;
 }

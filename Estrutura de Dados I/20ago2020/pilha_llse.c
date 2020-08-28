@@ -11,7 +11,6 @@ typedef struct no{
 }No;
 
 struct pilha{
-    int valor;
     struct no *elemento_topo;
 };
 
@@ -27,7 +26,13 @@ Pilha* criar_pilha(){
 }
 
 void remover_todos(Pilha* pilha){
+    if(pilha == NULL)
+    {
+        printf("Operacao invalida.\n");
+        exit(0);
+    }
 
+    while(desempilhar(pilha) == 1);
 }
 
 int empilhar(Pilha* pilha, int valor){
@@ -57,16 +62,53 @@ int empilhar(Pilha* pilha, int valor){
     return 1;
 }
 
-int desempilhar(Pilha* pilha, int valor){
+int desempilhar(Pilha* pilha){
+    if(pilha == NULL)
+    {
+        printf("Operacao invalida.\n");
+        exit(0);
+    }
 
+    if(pilha->elemento_topo == NULL)
+    {
+        return 0;
+    }
+
+    No* temporario = pilha->elemento_topo;
+    pilha->elemento_topo = temporario->proximo;
+    free(temporario);
+
+    return 1;
 }
 
 int topo(Pilha* pilha){
+    if(pilha == NULL)
+    {
+        printf("Operacao invalida.\n");
+        exit(0);
+    }
 
+    if(pilha == NULL)
+    {
+        exit(0);
+    }
+
+    return pilha->elemento_topo->dado;
 }
 
 int pilha_vazia(Pilha* pilha){
+    if(pilha == NULL)
+    {
+        printf("Operacao invalida.\n");
+        exit(0);
+    }
 
+    if(pilha->elemento_topo == NULL)
+    {
+        return 1;
+    }
+
+    return 0;
 }
 
 //Função de debug - evitar usar
@@ -77,5 +119,8 @@ void mostrar_pilha(Pilha* pilha){
         exit(0);
     }
 
-    
+    for(No* temporario = pilha->elemento_topo; temporario != NULL; temporario = temporario->proximo)
+    {
+        printf("%d\n", temporario->dado);
+    }
 }

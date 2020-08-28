@@ -12,7 +12,7 @@ class Filho : private Pai{
         void setNome(const std::string & input);
         std::string getNome();
 
-        void setSobrenome(/* const std::string & input */);
+        void setSobrenome();
         std::string getSobrenome();
 };
 
