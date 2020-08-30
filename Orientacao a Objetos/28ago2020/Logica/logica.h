@@ -1,11 +1,12 @@
 #ifndef _LOGICA_H
 #define _LOGICA_H
-#include <cstdio>
+#include <iostream>
 #include <cstdlib>
-#include <vector>
 
 #include "../Classes/funcionario.h"
 #include "../Classes/empresario.h"
+
+using namespace std; 
 
 class Logica {
 	private:
@@ -13,27 +14,15 @@ class Logica {
 		vector <Empresario*> empreLista;
 	public:
 		int menu();
-		void iniciar();
+        void iniciar();
 
-		Funcionario* criarFunc();
-		Empresario* criarEmpre();
-		
-		string pesquisar();
+        void add(Funcionario*);
+        void add(Empresario*);
+        void* cria();
 
-		Funcionario* searchFunc();
-		Empresario* searchEmpre();
-
-		void alterar_pessoa(Funcionario* func);
-		void alterar_pessoa(Empresario* emp);
-		
-		bool remover_posicao_vector();
-
-		void add(Funcionario* func);
-		void add(Empresario* empre);
-
-		void print();
-		void printAll();
-
+        Endereco* criaEndereco();
+        vector <Email*> criaEmails();
+        Telefone* criaTelefone();
 
 };
 

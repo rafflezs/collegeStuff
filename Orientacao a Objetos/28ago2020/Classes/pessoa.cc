@@ -1,6 +1,6 @@
 #include "pessoa.h"
 
-void Pessoa::set_emails(Email** emails){
+void Pessoa::set_emails(vector <Email*> emails){
     this->emails = emails;
 }
 void Pessoa::set_endereco(const Endereco& endereco){
@@ -16,7 +16,7 @@ void Pessoa::set_telefone(Telefone* telefone){
     this->telefone = telefone;
 }
 
-Email** Pessoa::get_emails(){
+vector<Email*> Pessoa::get_emails(){
     return emails;
 }
 Endereco Pessoa::get_endereco(){

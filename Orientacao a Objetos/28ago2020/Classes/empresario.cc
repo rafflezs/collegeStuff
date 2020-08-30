@@ -1,6 +1,6 @@
 #include "empresario.h"
 
-Empresario::Empresario() : (const Endereco& endereco) : Pessoa(endereco) {
+Empresario::Empresario(const Endereco& endereco) : Pessoa(endereco) {
 }
 
 float Empresario::getInvestimento() {
