@@ -2,6 +2,7 @@
 #define _LOGICA_H
 #include <iostream>
 #include <cstdlib>
+#include <typeinfo>
 
 #include "../Classes/funcionario.h"
 #include "../Classes/empresario.h"
@@ -16,9 +17,19 @@ class Logica {
 		int menu();
         void iniciar();
 
-        void add(Funcionario*);
-        void add(Empresario*);
+        void add(void* obj);
         void* cria();
+
+        string consultar();
+        void* pesquisar(const string & RG);
+
+        void exibeUnico(void* obj);
+
+        void exibeTodos(); 
+
+        void altera(void* obj);
+
+        bool removeElemento(const string & RG);
 
         Endereco* criaEndereco();
         vector <Email*> criaEmails();
