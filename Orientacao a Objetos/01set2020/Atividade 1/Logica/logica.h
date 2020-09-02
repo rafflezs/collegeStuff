@@ -5,6 +5,7 @@
 #include "../Classes/matricial.h"
 
 #include <vector>
+#include <typeinfo>
 
 class Logica {
 
@@ -18,7 +19,10 @@ public:
 	void* cria();
 	void adciona(void*);
 
-	void exibe();
+	void exibeTodos();
+    void* exibeUnico(void*);
+
+
 };
 
 #endif // !_LOGICA_H
