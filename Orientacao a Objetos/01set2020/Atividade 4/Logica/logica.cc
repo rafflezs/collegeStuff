@@ -28,25 +28,7 @@ void Logica::iniciar(){
                 add(cria());
             } break;
             case 2:{
-                cout << "[1] Consulta por index\n[2] Consulta por nome\n Sua opcao: ";
-                int aaaa;
-                cin >> aaaa;
-                cin.ignore();
-/* 
-                switch (aaaa)
-                {
-                case 1:{
-                    int index = (int) consultar();
-                    break;
-                }
-                case 2:{
-                    string teste = (string) consultar();
-                    break;
-                }
-                default:
-                    break;
-                }
- */
+                exibeUnico( consultar() );
             } break;
             case 3:{
                 exibeTodos();
@@ -305,10 +287,34 @@ void* Logica::cria(){
 };
 
 void* Logica::consultar(){
-    return NULL;
-};
 
-void* Logica::pesquisar(void* var){
+    int op;
+    cout << "[1] Pesquisa por Index\n[2] Pesquisa por nome: ";
+    cin >> op;
+    cin.ignore();
+
+    if(op){
+
+        cout << "Digite o index: ";
+        cin >> op;
+        cin.ignore();
+        vector <Pessoa*>::iterator it = pessoaLista.begin();
+        
+        for(int i = 0; i < op; i++, it++);
+        return (*it);
+
+    }
+
+    string nome;
+    getline(cin, nome);
+
+    for(vector <Pessoa*>::iterator it = pessoaLista.begin();
+        it != pessoaLista.end(); it++){
+            if((*it)->getNome().compare(nome) == 0){
+                return (*it);
+            }
+    }
+
     return NULL;
 };
 
@@ -333,8 +339,49 @@ void Logica::exibeTodos(){
 
 void Logica::altera(void* obj){
 
+    string aaaa;
+
+    Pessoa* temp = (Pessoa *) obj;
+
+    getline(cin,aaaa);
+    temp->setIdade(stoi(aaaa));
+
+    getline(cin,aaaa);
+    temp->setNome(aaaa);
+
+    getline(cin,aaaa);
+    temp->setNumContribuinte(aaaa);
+
 };
 
-bool Logica::removeElemento(void* var){
-    return NULL;
+bool Logica::removeElemento(){
+
+    int op;
+    cout << "[1] Pesquisa por Index\n[2] Pesquisa por nome: ";
+    cin >> op;
+    cin.ignore();
+
+    if(op){
+
+        cout << "Digite o index: ";
+        cin >> op;
+        cin.ignore();
+        vector <Pessoa*>::iterator it = pessoaLista.begin();
+        
+        for(int i = 0; i < op; i++, it++);
+        pessoaLista.erase(it);
+
+    }
+
+    string nome;
+    getline(cin, nome);
+
+    for(vector <Pessoa*>::iterator it = pessoaLista.begin();
+        it != pessoaLista.end(); it++){
+            if((*it)->getNome().compare(nome) == 0){
+                pessoaLista.erase(it);
+            }
+    }
+
+    return false;
 };

@@ -29,7 +29,6 @@ class Logica{
         void* cria();
 
         void* consultar();
-        void* pesquisar(void* var);
 
         void exibeUnico(void* obj);
 
@@ -37,8 +36,7 @@ class Logica{
 
         void altera(void* obj);
 
-        bool removeElemento(void* var);
-
+        bool removeElemento();
 
 };
 
