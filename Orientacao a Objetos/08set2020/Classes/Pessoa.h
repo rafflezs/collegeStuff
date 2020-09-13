@@ -1,31 +1,31 @@
 #ifndef _PESSOA_H
 #define _PESSOA_H
 
+#include "abPessoa.h"
 #include "Endereco.h"
+#include "Pedido.h"
 
-class Pessoa {
-	protected:
-		std::string nome;
-		double atualizarDivida(int, int);
-
+class Pessoa  : public abPessoa{
 	private:
+		std::string nome;//
 		Endereco* endereco;
-		int cpf;
-		int atualizarDivida(int);
+		int cpf;//
+		int rg;//
 
 	public:
-		Pessoa();
+
+		Pedido* comprar();
+
+		double atualizarDivida(int val1);
+		
 		int getCpf();
 		void setCpf(const int & input);
 
-		int rg;
 		int getRg();
 		void setRg(const int& input);
 
 		std::string getNome();
 		void setNome(const std::string &);
-
-		void atualizarDivida();
 };
 
 #endif // !_PESSOA_H
