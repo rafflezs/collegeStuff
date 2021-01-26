@@ -4,13 +4,13 @@ void quest3();
 void quest4();
 unsigned long long int fibonacci(int termo);
 unsigned long long int fatorial(int valor);
-void bucetinhaRecursiva(int n);
+void recursaoRecursaoRecursaoRecursaoRecursao(int n);
 
 int main(){
 
     int n;
     scanf("%i", &n);
-    bucetinhaRecursiva(n);
+    recursaoRecursaoRecursaoRecursaoRecursao(n);
 
     return 0;
 
@@ -91,13 +91,13 @@ unsigned long long int fatorial(int valor){
 
 }
 
-void bucetinhaRecursiva(int n){
+void recursaoRecursaoRecursaoRecursaoRecursao(int n){
 
     if(n == 0){
         printf("%i\n", n);
     }else{
         //printf("%i\n",n); //Decrescente
-        bucetinhaRecursiva(n-1);
+        recursaoRecursaoRecursaoRecursaoRecursao(n-1);
         printf("%i\n",n); //Crescente
     }
 
