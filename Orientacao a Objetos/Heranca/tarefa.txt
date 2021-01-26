@@ -1,5 +1,0 @@
-Desenvolva 2 aplicações em C++ que demonstre:
-
- - A diferença entre herança pública e privada;
-
-Faça um breve resume do porque usou herança pública ou privada.
