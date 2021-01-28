@@ -11,7 +11,7 @@ int main(){
 
     for(int n = 1; n < 10; n++){
         printf("%f\n", serie(n));
-    }
+    } 
 
     return 0;
 }
