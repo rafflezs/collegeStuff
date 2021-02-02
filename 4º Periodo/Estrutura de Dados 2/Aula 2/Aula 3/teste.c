@@ -65,7 +65,7 @@ int mdc(int a, int b){
 
 void print_matriz(int mat[3][3], int lin, int col){
     
-    printf("%i\n", mat[col-1][lin-1]);
+    printf("%i\n", mat[lin-1][col-1]);
     if(lin == 1){
         if(col == 1){
             return;
@@ -81,7 +81,7 @@ void print_matriz(int mat[3][3], int lin, int col){
 
 void scan_matriz(int mat[3][3], int lin, int col){
     
-    scanf("%i\n", &mat[col-1][lin-1]);
+    scanf("%i\n", &mat[lin-1][col-1]);
     if(lin == 1){
         if(col == 1){
             return;
@@ -137,13 +137,13 @@ void print_vetor(int vet[], int tam){
 
 int main(){
 
-    int arr[10] = {1,2,3,4,5,6,7,8,9,10};
+    int mat[3][3] = {
+        {1,2,3},
+        {4,5,6},
+        {7,8,9}
+    };
 
-    inverte_vetor(arr,0,10);
-
-    printf("\n\n");
-
-    print_vetor(arr,10);
+    print_matriz(mat,3,3);
 
     return 0;
 }
