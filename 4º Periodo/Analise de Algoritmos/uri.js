@@ -1,0 +1,3 @@
+import exercicioDoUriPronto
+
+fazOExercicioProntoIgualTudoEmWeb
